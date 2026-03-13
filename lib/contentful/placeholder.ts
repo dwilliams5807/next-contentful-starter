@@ -36,7 +36,7 @@ const sections: ContentSection[] = [
     mobileTextPosition: 'Center',
     noMarginBanner: false,
     cta: 'View on GitHub',
-    ctaLink: 'https://github.com/',
+    ctaLink: 'https://github.com/dwilliams5807/next-contentful-starter',
     ctaStyle: 'Button',
     ctaButtonColor: '#ffffff',
   },
