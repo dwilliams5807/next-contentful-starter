@@ -1,0 +1,228 @@
+{
+  "contentTypes": [
+    {
+      "sys": { "id": "homePage" },
+      "name": "Home Page",
+      "displayField": "title",
+      "fields": [
+        { "id": "title", "name": "Title", "type": "Symbol", "required": true },
+        { "id": "metaTitle", "name": "Meta Title", "type": "Symbol" },
+        {
+          "id": "sections",
+          "name": "Sections",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [
+              {
+                "linkContentType": [
+                  "duplexSection",
+                  "columnsSection",
+                  "heroSection"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sys": { "id": "duplexSection" },
+      "name": "Duplex Section",
+      "displayField": "title",
+      "description": "Two-column layout with a text side and a media side.",
+      "fields": [
+        { "id": "title", "name": "Title", "type": "Symbol", "required": true },
+        { "id": "text", "name": "Text", "type": "RichText" },
+        {
+          "id": "textPosition",
+          "name": "Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Left", "Right"] }]
+        },
+        { "id": "textColor", "name": "Text Color", "type": "Symbol" },
+        { "id": "textBackgroundColor", "name": "Text Background Color", "type": "Symbol" },
+        {
+          "id": "textBackgroundImage",
+          "name": "Text Background Image",
+          "type": "Link",
+          "linkType": "Asset"
+        },
+        {
+          "id": "textSectionIcon",
+          "name": "Text Section Icon",
+          "type": "Link",
+          "linkType": "Asset"
+        },
+        { "id": "cta", "name": "CTA Label", "type": "Symbol" },
+        { "id": "ctaLink", "name": "CTA Link", "type": "Symbol" },
+        { "id": "ctaButtonColor", "name": "CTA Button Color", "type": "Symbol" },
+        {
+          "id": "ctaStyle",
+          "name": "CTA Style",
+          "type": "Symbol",
+          "validations": [{ "in": ["Button", "Link"] }]
+        },
+        {
+          "id": "mediaType",
+          "name": "Media Is Video",
+          "type": "Boolean"
+        },
+        {
+          "id": "image",
+          "name": "Image / Video",
+          "type": "Link",
+          "linkType": "Asset"
+        },
+        { "id": "altText", "name": "Alt Text", "type": "Symbol" },
+        {
+          "id": "desktopAlignment",
+          "name": "Desktop Media Alignment",
+          "type": "Symbol",
+          "validations": [{ "in": ["Left", "Right"] }]
+        },
+        {
+          "id": "mobileAlignment",
+          "name": "Mobile Media Alignment",
+          "type": "Symbol",
+          "validations": [{ "in": ["Top", "Bottom"] }]
+        },
+        {
+          "id": "split",
+          "name": "Split Ratio",
+          "type": "Symbol",
+          "validations": [{ "in": ["50%", "60%", "40%", "100%"] }]
+        },
+        {
+          "id": "imageType",
+          "name": "Image Type",
+          "type": "Symbol",
+          "validations": [{ "in": ["Icons", "Images"] }]
+        },
+        {
+          "id": "slides",
+          "name": "Slides",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [{ "linkContentType": ["card"] }]
+          }
+        }
+      ]
+    },
+    {
+      "sys": { "id": "columnsSection" },
+      "name": "Columns Section",
+      "displayField": "title",
+      "description": "A responsive grid of column items.",
+      "fields": [
+        { "id": "title", "name": "Title", "type": "Symbol" },
+        { "id": "text", "name": "Header Text", "type": "RichText" },
+        { "id": "textColor", "name": "Text Color", "type": "Symbol" },
+        { "id": "textPosition", "name": "Text Position", "type": "Symbol" },
+        { "id": "cta", "name": "CTA Label", "type": "Symbol" },
+        { "id": "ctaLink", "name": "CTA Link", "type": "Symbol" },
+        { "id": "backgroundColor1", "name": "Background Color 1", "type": "Symbol" },
+        { "id": "backgroundColor2", "name": "Background Color 2 (right accent)", "type": "Symbol" },
+        { "id": "rowWrap", "name": "Row Wrap", "type": "Boolean" },
+        { "id": "slideOnMobile", "name": "Slide on Mobile", "type": "Boolean" },
+        {
+          "id": "columns",
+          "name": "Columns",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry",
+            "validations": [{ "linkContentType": ["card"] }]
+          }
+        }
+      ]
+    },
+    {
+      "sys": { "id": "card" },
+      "name": "Card",
+      "displayField": "ctaText",
+      "description": "A reusable card used in Columns sections and Duplex carousels.",
+      "fields": [
+        { "id": "text", "name": "Text", "type": "RichText" },
+        {
+          "id": "textPosition",
+          "name": "Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Overlay", "Below", "Left", "Center", "Right"] }]
+        },
+        {
+          "id": "mobileTextPosition",
+          "name": "Mobile Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Overlay", "Below", "Left", "Center", "Right"] }]
+        },
+        { "id": "mediaType", "name": "Media Is Video", "type": "Boolean" },
+        { "id": "image", "name": "Image / Video", "type": "Link", "linkType": "Asset" },
+        { "id": "altText", "name": "Alt Text", "type": "Symbol" },
+        { "id": "ctaText", "name": "CTA Label", "type": "Symbol" },
+        { "id": "ctaUrl", "name": "CTA URL", "type": "Symbol" },
+        { "id": "textColor", "name": "Text Color", "type": "Symbol" },
+        { "id": "backgroundColor", "name": "Background Color", "type": "Symbol" },
+        {
+          "id": "ctaStyle",
+          "name": "CTA Style",
+          "type": "Symbol",
+          "validations": [{ "in": ["Button", "Link"] }]
+        },
+        { "id": "ctaButtonColor", "name": "CTA Button Color", "type": "Symbol" },
+        {
+          "id": "columnSpan",
+          "name": "Column Span",
+          "type": "Symbol",
+          "validations": [{ "in": ["1", "2"] }]
+        }
+      ]
+    },
+    {
+      "sys": { "id": "heroSection" },
+      "name": "Hero Section",
+      "displayField": "altText",
+      "description": "Full-width image or video with optional text overlaid on top.",
+      "fields": [
+        { "id": "mediaType", "name": "Media Is Video", "type": "Boolean" },
+        { "id": "image", "name": "Image / Video", "type": "Link", "linkType": "Asset" },
+        { "id": "mobileImage", "name": "Mobile Image", "type": "Link", "linkType": "Asset" },
+        { "id": "altText", "name": "Alt Text", "type": "Symbol" },
+        { "id": "text", "name": "Overlay Text", "type": "RichText" },
+        {
+          "id": "verticalTextPosition",
+          "name": "Vertical Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Top", "Center", "Bottom"] }]
+        },
+        {
+          "id": "horizontalTextPosition",
+          "name": "Horizontal Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Left", "Center", "Right", "Under Image"] }]
+        },
+        {
+          "id": "mobileTextPosition",
+          "name": "Mobile Text Position",
+          "type": "Symbol",
+          "validations": [{ "in": ["Left", "Center", "Right", "Under Image"] }]
+        },
+        { "id": "textColor", "name": "Text Color (Desktop)", "type": "Symbol" },
+        { "id": "mobileTextColor", "name": "Text Color (Mobile)", "type": "Symbol" },
+        { "id": "cta", "name": "CTA Label", "type": "Symbol" },
+        { "id": "ctaLink", "name": "CTA Link", "type": "Symbol" },
+        { "id": "ctaButtonColor", "name": "CTA Button Color", "type": "Symbol" },
+        {
+          "id": "ctaStyle",
+          "name": "CTA Style",
+          "type": "Symbol",
+          "validations": [{ "in": ["Button", "Link"] }]
+        },
+        { "id": "noMarginBanner", "name": "No Bottom Margin (Banner)", "type": "Boolean" }
+      ]
+    }
+  ]
+}

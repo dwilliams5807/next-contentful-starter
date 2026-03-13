@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Outfit:wght@300..700&family=Space+Grotesk:wght@400..700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -10,11 +11,38 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brandTan: #E6DBBE;
+  --color-brandPink: #E6C7BE;
+  --color-brandGreen: #DDE6BD;
+  --color-brandBlue: #BEC9E6;
+  --color-brandBrown: #D8C69A;
+  --color-brandOffWhite: #F5F5F5;
+
+  --animate-fadeIn: fadeIn .3s ease-in-out;
+  --animate-carousel: marquee 60s linear infinite;
+  --animate-blink: blink 1.4s both infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1a1a1a;
     --foreground: #ededed;
   }
 }
@@ -22,5 +50,51 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+p, a {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-reg {
+  font-family: "Outfit", sans-serif !important;
+}
+
+.font-sub {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-weight: 600;
+}
+
+.font-head {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-weight: 700;
+}
+
+.font-signature {
+  font-family: 'Bonheur Royale', serif;
+  font-size: 3rem;
+}
+
+.style-cta {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: "Outfit", serif;
+  letter-spacing: 0.025em;
+}
+
+.style-cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
